@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const NewMessageForm = () => {
+const NewMessageForm = ({onSend}) => {
     const [inputText, setInputText] = useState('');
 
     const handleChange = (event) => {
@@ -8,6 +8,7 @@ const NewMessageForm = () => {
     }
 
     const handleClick = () => {
+        onSend(inputText);
         setInputText('');
     }
 
